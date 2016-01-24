@@ -2,6 +2,12 @@ module Access
     ( Access
     , AccessT
     , Config (..)
+    , JSON
+    , Response
+    , successful
+    , json
+    , selection
+    , responseError
     , runAccess
     ) where
 
