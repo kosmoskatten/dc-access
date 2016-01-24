@@ -3,7 +3,10 @@ module Main
     ( main
     ) where
 
-import Access (Config (..))
+import Control.Monad (when)
+import Control.Monad.Trans (liftIO, lift)
+
+import Access (Config (..), successful, json, listVPodCollection)
 import Shell (Shell, runShell)
 
 main :: IO ()
@@ -14,4 +17,11 @@ main = do
                    , username = "sysadmin"
                    , password = "sysadmin123"
                    }
-    runShell (return ()) c
+    runShell fetchVPods c
+
+fetchVPods :: Shell ()
+fetchVPods = do
+    resp <- lift $ listVPodCollection
+    when (successful resp) $
+      liftIO $ print (json resp)
+

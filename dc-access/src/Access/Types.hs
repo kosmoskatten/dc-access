@@ -22,6 +22,7 @@ import Data.Aeson.Types (typeMismatch)
 import Data.Either (isRight)
 import Data.IORef (IORef)
 import Data.Text.Encoding (encodeUtf8)
+import Network.Wreq.Session (Session)
 
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Lazy as LBS
@@ -54,6 +55,8 @@ data Context
     = Context
       { server   :: !Server
         -- ^ API server.
+      , session  :: !Session
+        -- ^ Current session.
       , tokenRef :: !(IORef Token)
         -- ^ Access tokens.
       }
