@@ -22,7 +22,7 @@ import Network.Wreq (defaults, auth, basicAuth)
 import Network.Wreq.Session (withSessionControl)
 import Text.Printf (printf)
 
-import Access.Raw (aquireToken)
+import Access.Rest (aquireToken)
 import Access.Types (Context (..), Server)
 
 data Config

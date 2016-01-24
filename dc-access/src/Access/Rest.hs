@@ -1,4 +1,5 @@
-module Access.Raw
+-- | Low level functions to access the REST Api.
+module Access.Rest
     ( aquireToken
     ) where
 

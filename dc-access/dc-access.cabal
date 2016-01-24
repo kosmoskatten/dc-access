@@ -20,7 +20,7 @@ library
   other-modules:       Access.Api
                        Access.EndPoint
                        Access.Monad
-                       Access.Raw
+                       Access.Rest
                        Access.Types
   -- other-extensions:    
   build-depends:       base >=4.8 && <4.9
